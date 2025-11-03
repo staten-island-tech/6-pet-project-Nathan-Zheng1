@@ -9,7 +9,7 @@ class Pet:
     def play(self):
         self.__happiness += 1
         self.__sleep -= 1
-        print(f"The cat is having fun! Happiness increased to {self.happiness}.")
+        print(f"The cat is having fun! But its become tired! Happiness increased to {self.__happiness}. Energy decreased to {self.__sleep}")
         
     def show_happiness(self):
         return f"Happiness: {self.happiness}"
