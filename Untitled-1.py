@@ -61,34 +61,36 @@ class Pet:
                 print("Kitty is feeling less hungry now! Hunger decreased by 0.5")
     
     def wheel(self):
-        if self.money < 25:
-            print("Halt! You do not have enough money to play!")
-        else:
             while True:
-                user_input = input("Would you like to spin the magnificent wheel of doom? The price per spin is 25 dollars! Spinning a value of 1 will win the huge jackpot! The values 2, 3, 4, or 5 will all award a prize...and the number 67... Type 'exit' to leave.")
-                if user_input == "exit":
-                    print("Goodbye!")
-                elif user_input == "yes":
-                    self.money -= 25
-                    x = random.randint(1,100)
-                    print(x)
-                    if x == 1:
-                        print("You won the jackpot! Cash increased by 1000. Happiness increased by 5")
-                        self.happiness += 5
-                        self.money += 1000
-                    elif x == 2 or x == 3 or x == 4 or x == 5:
-                        print("You won a prize! Increased cash by 50, increased cat food by 1. Happiness increased by 1.")
-                        self.money += 50
-                        self.food += 1
-                    elif x == 67:
-                        print("How unfortunate...cash decreased by 67...")
-                        self.money -= 67
-                    else:
-                        print("Unlucky! No winner this time. ")
-                elif user_input == "no":
-                    print("Come again next time!")
+                if self.money < 25:
+                    print("Halt! You do not have enough money to play!")
+                    break
                 else:
-                    print("Invalid response.")
+                    user_input = input("Would you like to spin the magnificent wheel of doom? The price per spin is 25 dollars! Spinning a value of 1 will win the huge jackpot! The values 2, 3, 4, or 5 will all award a prize...and the number 67... Type 'exit' to leave.")
+                    if user_input == "exit":
+                        print("Goodbye!")
+                        break
+                    elif user_input == "yes":
+                        self.money -= 25
+                        x = random.randint(1,100)
+                        print(x)
+                        if x == 1:
+                            print("You won the jackpot! Cash increased by 1000. Happiness increased by 5")
+                            self.happiness += 5
+                            self.money += 1000
+                        elif x == 2 or x == 3 or x == 4 or x == 5:
+                            print("You won a prize! Increased cash by 50, increased cat food by 1. Happiness increased by 1.")
+                            self.money += 50
+                            self.food += 1
+                        elif x == 67:
+                            print("How unfortunate...cash decreased by 67...")
+                            self.money -= 67
+                        else:
+                            print("Unlucky! No winner this time. ")
+                    elif user_input == "no":
+                        print("Come again next time!")
+                    else:
+                        print("Invalid response.")
 
 Kitty = Pet("Kitty", 1, 5, 0, 5, 1, 100)
 
