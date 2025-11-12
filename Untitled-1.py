@@ -39,15 +39,15 @@ class Pet:
                 print("Wise choice, come back later.")
         
     def shop(self):
-        user_input = input("Welcome to cat central! Would you like to buy some cat food?")
-        if user_input == "no":
+        user_input = input("Welcome to cat central! Cat food is 75 dollars each, how many would you like? Type 'exit' to leave.")
+        if user_input == "exit":
             print("Alright! Come back next time!")
-        elif user_input == "yes":
-            user_input = input("Alright! Cat food is 75 dollars. Would you like to proceed?")
-            if user_input == "yes":
-                self.money -= 75
-                self.food += 1
-                print("Thank you for your purchase! See you soon.")
+        else:
+            x = int(user_input)
+            y = x * 75
+            self.money -= 75 * x
+            self.food += 1 * x
+            print("Thank you for your purchase! See you soon.")
 
     def show_stats(self):
         print(self.__dict__)
@@ -96,10 +96,6 @@ Kitty = Pet("Kitty", 1, 5, 0, 5, 1, 100)
 
 print("Welcome to Kitty's adventure! In this game, you control a 'Pet' called Kitty! Kitty is able to run  a multitude of functions which you can find in info. Your goal is to make it to the age of 100! To do this, you must be able to sleep 100 times, but be warned, each time you sleep is costly! Make sure to keep your stats good before you sleep, or kitty might just die...Keep him alive, eat him, kill him, or let him live a normal life! All the powers in your hands! Please type 'Info' of you need more information about this game.")
 while True:
-    user_input = input("Would you like to commit an action? Type 'exit' to leave.")
-    if user_input == "exit":
-        print("Thank you for playing!")
-        break
     if Kitty.hunger >= 10:
         print("You forgot to feed kitty! Kitty has died!")
         break
@@ -108,6 +104,14 @@ while True:
         break
     if Kitty.happiness <= 0:
         print("Kitty is depressed...game. over.")
+        break
+    if Kitty.sleepiness >= 10:
+        print("Oh no! Kitties sleepiness reached 10! Kitty fell asleep randomly and got robbed. Sleepiness decreased by 1, money decreased by 100")
+        Kitty.money -= 100
+        Kitty.sleepiness -= 1
+    user_input = input("Would you like to commit an action? Type 'exit' to leave.")
+    if user_input == "exit":
+        print("Thank you for playing!")
         break
     if user_input == "Info":
         print("In this game, you control a 'Pet' named Kitty. All functions currently availible include Eat, Sleep, Play, Stats, Work, Shop and Gamble. Kitty will die if hunger exceeds 10, hunger decreases to 0, or if happiness decreases to 0.")
