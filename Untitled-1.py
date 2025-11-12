@@ -23,7 +23,7 @@ class Pet:
             self.happiness += 1
             self.sleepiness += 1
             self.hunger += 0.5
-            print("Kitty is having fun, but is now tired! Happiness increased by 1, sleepiness increased by 1.")
+            print("Kitty is having fun, but is now tired! Happiness increased by 1, sleepiness increased by 1, and hunger increased by 0.5.")
     
     def sleep(self):
         if self.sleepiness <= 1:
@@ -94,7 +94,7 @@ class Pet:
 
 Kitty = Pet("Kitty", 1, 5, 0, 5, 1, 100)
 
-print("Welcome to Kitty's adventure! In this game, you control a 'Pet' called Kitty! Kitty is able to run  a multitude of functions: Eat, Sleep, Play, Stats, Work, and Shop. Your goal is to make it to the age of 100! To do this, you must be able to sleep 100 times, but be warned, each time you sleep is costly! Make sure to keep your stats good before you sleep, or kitty might just die...Keep him alive, eat him, kill him, or let him live a normal life! All the powers in your hands!")
+print("Welcome to Kitty's adventure! In this game, you control a 'Pet' called Kitty! Kitty is able to run  a multitude of functions which you can find in info. Your goal is to make it to the age of 100! To do this, you must be able to sleep 100 times, but be warned, each time you sleep is costly! Make sure to keep your stats good before you sleep, or kitty might just die...Keep him alive, eat him, kill him, or let him live a normal life! All the powers in your hands! Please type 'Info' of you need more information about this game.")
 while True:
     user_input = input("Would you like to commit an action? Type 'exit' to leave.")
     if user_input == "exit":
@@ -109,7 +109,9 @@ while True:
     if Kitty.happiness <= 0:
         print("Kitty is depressed...game. over.")
         break
-    if user_input == "Play":
+    if user_input == "Info":
+        print("In this game, you control a 'Pet' named Kitty. All functions currently availible include Eat, Sleep, Play, Stats, Work, Shop and Gamble. Kitty will die if hunger exceeds 10, hunger decreases to 0, or if happiness decreases to 0.")
+    elif user_input == "Play":
         Kitty.play()
     elif user_input == "Sleep":
         Kitty.sleep()
