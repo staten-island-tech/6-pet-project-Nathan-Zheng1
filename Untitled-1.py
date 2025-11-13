@@ -37,6 +37,8 @@ class Pet:
                 print("Bold move.")
             elif user_input == "no":
                 print("Wise choice, come back later.")
+            else:
+                print("Invalid Input, try again.")
         
     def shop(self):
         user_input = input("Welcome to cat central! Cat food is 75 dollars each, how many would you like? Type 'exit' to leave.")
@@ -56,9 +58,9 @@ class Pet:
             if self.food == 0:
                 print("Kitty does not have any food to eat.")
             else:
-                self.hunger -= 0.5
+                self.hunger -= 1
                 self.food -= 0.5
-                print("Kitty is feeling less hungry now! Hunger decreased by 0.5")
+                print("Kitty is feeling less hungry now! Hunger decreased by 1, food decreased by 0.5.")
     
     def wheel(self):
             while True:
@@ -82,6 +84,7 @@ class Pet:
                             print("You won a prize! Increased cash by 50, increased cat food by 1. Happiness increased by 1.")
                             self.money += 50
                             self.food += 1
+                            self.happiness += 1
                         elif x == 67:
                             print("How unfortunate...cash decreased by 67...")
                             self.money -= 67
@@ -97,13 +100,13 @@ Kitty = Pet("Kitty", 1, 5, 0, 5, 1, 100)
 print("Welcome to Kitty's adventure! In this game, you control a 'Pet' called Kitty! Kitty is able to run  a multitude of functions which you can find in info. Your goal is to make it to the age of 100! To do this, you must be able to sleep 100 times, but be warned, each time you sleep is costly! Make sure to keep your stats good before you sleep, or kitty might just die...Keep him alive, eat him, kill him, or let him live a normal life! All the powers in your hands! Please type 'Info' of you need more information about this game.")
 while True:
     if Kitty.hunger >= 10:
-        print("You forgot to feed kitty! Kitty has died!")
+        print(f"You forgot to feed kitty! Kitty has died! Age: {Kitty.age}")
         break
     if Kitty.hunger <= 0:
-        print("Oh no! You fed Kitty too much! Kitty exploded!")
+        print(f"Oh no! You fed Kitty too much! Kitty exploded! Age: {Kitty.age}")
         break
     if Kitty.happiness <= 0:
-        print("Kitty is depressed...game. over.")
+        print(f"Kitty is depressed...game. over. Age: {Kitty.age}")
         break
     if Kitty.sleepiness >= 10:
         print("Oh no! Kitties sleepiness reached 10! Kitty fell asleep randomly and got robbed. Sleepiness decreased by 1, money decreased by 100")
