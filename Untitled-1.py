@@ -10,9 +10,9 @@ class Pet:
         self.money = money
     
     def work(self):
-            self.money += 100
-            self.sleepiness += 2
-            self.hunger += 1
+            self.money += 125
+            self.sleepiness += 1.5
+            self.hunger += 1.5
             self.happiness -= 1
             print("Kitty is working! Increased cash. Increased Sleepiness and Hunger. Decreased happiness.")
 
@@ -20,10 +20,10 @@ class Pet:
         if self.sleepiness >= 8:
             print("Kitty is too tired to play!")
         else:
-            self.happiness += 1
+            self.happiness += 2
             self.sleepiness += 1
             self.hunger += 0.5
-            print("Kitty is having fun, but is now tired! Happiness increased by 1, sleepiness increased by 1, and hunger increased by 0.5.")
+            print("Kitty is having fun, but is now tired! Happiness increased by 2, sleepiness increased by 0.5, and hunger increased by 0.5.")
     
     def sleep(self):
         if self.sleepiness <= 1:
@@ -41,13 +41,13 @@ class Pet:
                 print("Invalid Input, try again.")
         
     def shop(self):
-        user_input = input("Welcome to cat central! Cat food is 75 dollars each, how many would you like? Type 'exit' to leave.")
+        user_input = input("Welcome to cat central! Cat food is 100 dollars each, how many would you like? Type 'exit' to leave.")
         if user_input == "exit":
             print("Alright! Come back next time!")
         else:
             x = int(user_input)
-            y = x * 75
-            self.money -= 75 * x
+            y = x * 100
+            self.money -= 100 * x
             self.food += 1 * x
             print("Thank you for your purchase! See you soon.")
 
@@ -59,8 +59,8 @@ class Pet:
                 print("Kitty does not have any food to eat.")
             else:
                 self.hunger -= 1
-                self.food -= 0.5
-                print("Kitty is feeling less hungry now! Hunger decreased by 1, food decreased by 0.5.")
+                self.food -= 0.25
+                print("Kitty is feeling less hungry now! Hunger decreased by 1, food decreased by 0.25.")
     
     def wheel(self):
             while True:
@@ -73,21 +73,27 @@ class Pet:
                         print("Goodbye!")
                         break
                     elif user_input == "yes":
-                        self.money -= 25
-                        x = random.randint(1,100)
+                        self.money -= 20
+                        x = random.randint(1,999)
                         print(x)
                         if x == 1:
                             print("You won the jackpot! Cash increased by 1000. Happiness increased by 5")
-                            self.happiness += 5
-                            self.money += 1000
+                            self.happiness += 10
+                            self.money += 10000
                         elif x == 2 or x == 3 or x == 4 or x == 5:
-                            print("You won a prize! Increased cash by 50, increased cat food by 1. Happiness increased by 1.")
-                            self.money += 50
-                            self.food += 1
-                            self.happiness += 1
+                            print("You won a prize! Increased cash by 500, increased cat food by 2. Happiness increased by 2.")
+                            self.money += 500
+                            self.food += 2
+                            self.happiness += 2
+                        elif x == 69:
+                            print("Hm....69?...Here, have 69 dollars!")
+                            self.money += 69
                         elif x == 67:
                             print("How unfortunate...cash decreased by 67...")
                             self.money -= 67
+                        elif x == 999 or x == 677:
+                            print("Intresting...have 1000!")
+                            self.money += 1000
                         else:
                             print("Unlucky! No winner this time. ")
                     elif user_input == "no":
@@ -95,7 +101,7 @@ class Pet:
                     else:
                         print("Invalid response.")
 
-Kitty = Pet("Kitty", 1, 5, 0, 5, 1, 100)
+Kitty = Pet("Kitty", 1, 5, 0, 5, 1, 10000)
 
 print("Welcome to Kitty's adventure! In this game, you control a 'Pet' called Kitty! Kitty is able to run  a multitude of functions which you can find in info. Your goal is to make it to the age of 100! To do this, you must be able to sleep 100 times, but be warned, each time you sleep is costly! Make sure to keep your stats good before you sleep, or kitty might just die...Keep him alive, eat him, kill him, or let him live a normal life! All the powers in your hands! Please type 'Info' of you need more information about this game.")
 while True:
@@ -109,9 +115,9 @@ while True:
         print(f"Kitty is depressed...game. over. Age: {Kitty.age}")
         break
     if Kitty.sleepiness >= 10:
-        print("Oh no! Kitties sleepiness reached 10! Kitty fell asleep randomly and got robbed. Sleepiness decreased by 1, money decreased by 100")
+        print("Oh no! Kitties sleepiness reached 10! Kitty fell asleep randomly and got robbed. Sleepiness decreased by 2, money decreased by 100")
         Kitty.money -= 100
-        Kitty.sleepiness -= 1
+        Kitty.sleepiness -= 2
     user_input = input("Would you like to commit an action? Type 'exit' to leave.")
     if user_input == "exit":
         print("Thank you for playing!")
