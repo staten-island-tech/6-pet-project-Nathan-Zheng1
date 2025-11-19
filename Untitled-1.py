@@ -1,4 +1,4 @@
-import random
+""" import random
 class Pet:
     def __init__(self, name, age, happiness, sleepiness, hunger, food, money, health):
         self.name = name
@@ -17,13 +17,14 @@ class Pet:
                 x = int(user_input)
                 if x == 1:
                     user_input = input("Intresting plan...the guard at the front was sleeping! You and your co-worker proceed to leave the building, completely unexpected! Suddenly, your co-worker tells you he plans to rob a bank...you've came so far already, right? Now, you have to discuss a way to rob a bank. (1) Enter through the main door, threaten everyone with a gun, and rush to escape the building. (2) Sneak your way to the back door, breaking in, and stealing from cash vaults. (3) Enter through the main door, threaten cashier with gun, leave the building.")
-                    if x == 1:
+                    y = int(user_input)
+                    if y == 1:
                         print("You run in, guns blazing, firing shots into the floor! Everythings looking well!...for the first 4 seconds. Looks like you forgot guards exist! You and your coworker get shot and die...")
                         Kitty.health -= 10
-                    elif x == 2:
+                    elif y == 2:
                         print("You sneak your way through the guards, reaching the back door. Once there, you open the vault, and slowly sneak through the hallways. Banks have cameras...your not slick. The duo is caught on the cameras, and the cops are called. By the time your done robbing everything, the cops are already there. You get shot on the spot.")
                         Kitty.health -= 10
-                    elif x == 3:
+                    elif y == 3:
                         print("You walk up to the cashier, and pull a gun concealed by your work bag. Terrified, the cashier sowly puts all the money in the register inside the bag, and you walk out the building with not much, but it was, afterall, the safest offer.")
                         Kitty.money += 1250
                         Kitty.happiness += 5
@@ -33,6 +34,8 @@ class Pet:
                 elif x == 2:
                     print("Sneaky...I like that. You proceed through the vents, but forgot to account for one thing...the vents are paper thin. You fall through the vent above the office, smashing your back into the floor. The boss punished you!")
                     self.money -= 100
+                else:
+                    print("Oops...looks like you slipped up. You didn't make it out of the building, and returned to work.")
             self.money += 125
             self.sleepiness += 1.5
             self.hunger += 1.5
@@ -114,7 +117,7 @@ class Pet:
                         elif x == 67:
                             print("How unfortunate...cash decreased by 67...")
                             self.money -= 67
-                        elif x == 999 or x == 677:
+                        elif x == 999 or x == 777:
                             print("Intresting...have 1000!")
                             self.money += 1000
                         else:
@@ -143,6 +146,7 @@ while True:
         Kitty.sleepiness -= 2
     if Kitty.health <= 0:
         print("Kitty has died to a injury.")
+        break
     user_input = input("Would you like to commit an action? Type 'exit' to leave.")
     if user_input == "exit":
         print("Thank you for playing!")
@@ -164,4 +168,16 @@ while True:
     elif user_input == "Gamble":
         Kitty.wheel()
     else:
-        print("Invalid input, try again.")
+        print("Invalid input, try again.") """
+
+#Login system
+def isValid(Email, password):
+    if "@" not in Email:
+        return "Not Valid Email, Error: Missing '@'"
+    if len(password) <= 8:
+        print("Password Invalid")
+        return "Not valid password, Error: Length not long enough"
+    if int not in password:
+        return "Not valid"
+        
+isValid("asjdaljdajoda@gmail.com", "Najda")
