@@ -173,11 +173,13 @@ while True:
 #Login system
 def isValid(Email, password):
     if "@" not in Email:
-        return "Not Valid Email, Error: Missing '@'"
+        return "Invalid Email, Error: Missing '@'"
+    if not isinstance(Email, str) or not isinstance(password, str):
+        return "Email or password is not a string"
     if len(password) <= 8:
-        print("Password Invalid")
-        return "Not valid password, Error: Length not long enough"
-    if int not in password:
-        return "Not valid"
-        
-isValid("asjdaljdajoda@gmail.com", "Najda")
+        return "Invalid password, Error: Length not long enough"
+    for char in password:
+        if char is int:
+            return "Invalid password, missing integer"
+    print("Thank you! Account created")
+print(isValid("asjdaljdajoda@gmail.com", "akhdhsgasasda2"))
