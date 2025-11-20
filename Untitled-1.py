@@ -1,4 +1,4 @@
-""" import random
+import random
 class Pet:
     def __init__(self, name, age, happiness, sleepiness, hunger, food, money, health):
         self.name = name
@@ -70,6 +70,8 @@ class Pet:
         user_input = input("Welcome to cat central! Cat food is 100 dollars each, how many would you like? Type 'exit' to leave.")
         if user_input == "exit":
             print("Alright! Come back next time!")
+        if not any(ch.isdigit() for ch in user_input):
+            print("Error, input value is not a integer")
         else:
             x = int(user_input)
             y = x * 100
@@ -168,9 +170,9 @@ while True:
     elif user_input == "Gamble":
         Kitty.wheel()
     else:
-        print("Invalid input, try again.") """
+        print("Invalid input, try again.") 
 
-#Login system
+""" #Login system
 def isValid(Email, password):
     if "@" not in Email:
         return "Invalid Email, Error: Missing '@'"
@@ -178,8 +180,9 @@ def isValid(Email, password):
         return "Email or password is not a string"
     if len(password) <= 8:
         return "Invalid password, Error: Length not long enough"
-    for char in password:
-        if char is int:
-            return "Invalid password, missing integer"
+    if not any(ch.isdigit() for ch in password):
+        return "Error: Missing a integer value"
+    if not any(ch.isupper() for ch in password):
+        return " Error: Missing a capital letter"
     print("Thank you! Account created")
-print(isValid("asjdaljdajoda@gmail.com", "akhdhsgasasda2"))
+print(isValid("asjdaljdajoda@gmail.com", "AKhdhsgasaadaa2")) """
