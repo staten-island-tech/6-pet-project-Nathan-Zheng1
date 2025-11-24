@@ -153,21 +153,21 @@ while True:
     if user_input == "exit":
         print("Thank you for playing!")
         break
-    if user_input == "Info":
+    if user_input == "Info" or user_input == "info":
         print("In this game, you control a 'Pet' named Kitty. All functions currently availible include Eat, Sleep, Play, Stats, Work, Shop and Gamble. Kitty will die if hunger exceeds 10, hunger decreases to 0, or if happiness decreases to 0.")
-    elif user_input == "Play":
+    elif user_input == "Play" or user_input == "play":
         Kitty.play()
-    elif user_input == "Sleep":
+    elif user_input == "Sleep" or user_input == "sleep":
         Kitty.sleep()
-    elif user_input == "Stats":
+    elif user_input == "Stats" or user_input == "stats":
         Kitty.show_stats()
-    elif user_input == "Eat":
+    elif user_input == "Eat" or user_input == "eat":
         Kitty.eat()
-    elif user_input == "Work":
+    elif user_input == "Work" or user_input == "work":
         Kitty.work()
-    elif user_input == "Shop":
+    elif user_input == "Shop" or user_input == "shop":
         Kitty.shop()
-    elif user_input == "Gamble":
+    elif user_input == "Gamble" or user_input == "gamble":
         Kitty.wheel()
     else:
         print("Invalid input, try again.") 
