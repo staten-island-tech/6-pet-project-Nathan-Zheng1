@@ -20,17 +20,17 @@ class Pet:
                     y = int(user_input)
                     if y == 1:
                         print("You run in, guns blazing, firing shots into the floor! Everythings looking well!...for the first 4 seconds. Looks like you forgot guards exist! You and your coworker get shot and die...")
-                        Kitty.health -= 10
+                        self.health -= 10
                     elif y == 2:
                         print("You sneak your way through the guards, reaching the back door. Once there, you open the vault, and slowly sneak through the hallways. Banks have cameras...your not slick. The duo is caught on the cameras, and the cops are called. By the time your done robbing everything, the cops are already there. You get shot on the spot.")
-                        Kitty.health -= 10
+                        self.health -= 10
                     elif y == 3:
                         print("You walk up to the cashier, and pull a gun concealed by your work bag. Terrified, the cashier sowly puts all the money in the register inside the bag, and you walk out the building with not much, but it was, afterall, the safest offer.")
-                        Kitty.money += 1250
-                        Kitty.happiness += 5
+                        self.money += 1250
+                        self.happiness += 5
                 elif x == 2:
                     print("As you open the window, a large draft blows into the office! Papers go flying, all employees are alarmed, the office is pure chaos! You rush out the window...on the 10th floor?")
-                    Kitty.health -= 10
+                    self.health -= 10
                 elif x == 2:
                     print("Sneaky...I like that. You proceed through the vents, but forgot to account for one thing...the vents are paper thin. You fall through the vent above the office, smashing your back into the floor. The boss punished you!")
                     self.money -= 100
@@ -129,25 +129,25 @@ class Pet:
                     else:
                         print("Invalid response.")
 
-Kitty = Pet("Kitty", 1, 5, 0, 5, 1, 100, 10)
+self = Pet("Kitty", 1, 5, 0, 5, 1, 100, 10)
 
 print("Welcome to Kitty's adventure! In this game, you control a 'Pet' called Kitty! Kitty is able to run  a multitude of functions which you can find in info. Your goal is to make it to the age of 100! To do this, you must be able to sleep 100 times, but be warned, each time you sleep is costly! Make sure to keep your stats good before you sleep, or kitty might just die...Keep him alive, eat him, kill him, or let him live a normal life! All the powers in your hands! Please type 'Info' of you need more information about this game.")
 while True:
-    if Kitty.hunger >= 10:
-        print(f"You forgot to feed kitty! Kitty has died! Age: {Kitty.age}")
+    if self.hunger >= 10:
+        print(f"You forgot to feed kitty! {self.name} has died! Age: {self.age}")
         break
-    if Kitty.hunger <= 0:
-        print(f"Oh no! You fed Kitty too much! Kitty exploded! Age: {Kitty.age}")
+    if self.hunger <= 0:
+        print(f"Oh no! You fed {self.name} too much! {self.name} exploded! Age: {self.age}")
         break
-    if Kitty.happiness <= 0:
-        print(f"Kitty is depressed...game. over. Age: {Kitty.age}")
+    if self.happiness <= 0:
+        print(f"{self.name} is depressed...game. over. Age: {self.age}")
         break
-    if Kitty.sleepiness >= 10:
-        print("Oh no! Kitties sleepiness reached 10! Kitty fell asleep randomly and got robbed. Sleepiness decreased by 2, money decreased by 100")
-        Kitty.money -= 100
-        Kitty.sleepiness -= 2
-    if Kitty.health <= 0:
-        print("Kitty has died to a injury.")
+    if self.sleepiness >= 10:
+        print(f"Oh no! Kitties sleepiness reached 10! {self.name} fell asleep randomly and got robbed. Sleepiness decreased by 2, money decreased by 100")
+        self.money -= 100
+        self.sleepiness -= 2
+    if self.health <= 0:
+        print(f"{self.name} has died to a injury.")
         break
     user_input = input("Would you like to commit an action? Type 'exit' to leave.")
     if user_input == "exit":
@@ -156,19 +156,19 @@ while True:
     if user_input == "Info" or user_input == "info":
         print("In this game, you control a 'Pet' named Kitty. All functions currently availible include Eat, Sleep, Play, Stats, Work, Shop and Gamble. Kitty will die if hunger exceeds 10, hunger decreases to 0, or if happiness decreases to 0.")
     elif user_input == "Play" or user_input == "play":
-        Kitty.play()
+        self.play()
     elif user_input == "Sleep" or user_input == "sleep":
-        Kitty.sleep()
+        self.sleep()
     elif user_input == "Stats" or user_input == "stats":
-        Kitty.show_stats()
+        self.show_stats()
     elif user_input == "Eat" or user_input == "eat":
-        Kitty.eat()
+        self.eat()
     elif user_input == "Work" or user_input == "work":
-        Kitty.work()
+        self.work()
     elif user_input == "Shop" or user_input == "shop":
-        Kitty.shop()
+        self.shop()
     elif user_input == "Gamble" or user_input == "gamble":
-        Kitty.wheel()
+        self.wheel()
     else:
         print("Invalid input, try again.") 
 
